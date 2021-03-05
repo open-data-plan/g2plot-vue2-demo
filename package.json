@@ -12,6 +12,7 @@
     "@opd/g2plot-vue": "^3.1.5",
     "@vue/cli-plugin-babel": "4.1.1",
     "@vue/composition-api": "1.0.0-rc.2",
+    "core-js": "^3.9.1",
     "vue": "2.6.12"
   },
   "devDependencies": {
