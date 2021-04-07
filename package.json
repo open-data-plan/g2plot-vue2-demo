@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@antv/g2plot": "2.3.13",
-    "@opd/g2plot-vue": "^3.1.11",
+    "@opd/g2plot-vue": "^3.1.12",
     "@vue/cli-plugin-babel": "4.1.1",
     "@vue/composition-api": "1.0.0-rc.2",
     "core-js": "^3.9.1",
