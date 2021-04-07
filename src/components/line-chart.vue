@@ -1,5 +1,9 @@
 <template>
-  <LineChart v-bind="config" :data="data" />
+  <div>
+    <button @click="handleConfigChange">change config</button>
+    <button @click="handleDataChange">change data</button>
+    <LineChart v-bind="config" :data="data" />
+  </div>
 </template>
 <script>
 import { defineComponent } from "vue-demi";
@@ -29,13 +33,22 @@ export default defineComponent({
         xField: "year",
         yField: "value",
         smooth: true,
-        meta: {
-          value: {
-            max: 15,
-          },
-        },
       },
     };
+  },
+  methods: {
+    handleConfigChange() {
+      this.config.smooth = !this.config.smooth;
+    },
+    handleDataChange() {
+      this.data = [
+        ...this.data,
+        {
+          year: (+this.data[this.data.length - 1].year + 1).toString(),
+          value: 10 + +(Math.random() * 10).toFixed(0),
+        },
+      ];
+    },
   },
 });
 </script>

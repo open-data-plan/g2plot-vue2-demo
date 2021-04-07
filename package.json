@@ -5,11 +5,12 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prepare": "node ./node_modules/@opd/g2plot-vue/scripts/postinstall.js"
   },
   "dependencies": {
     "@antv/g2plot": "2.3.13",
-    "@opd/g2plot-vue": "^3.1.5",
+    "@opd/g2plot-vue": "^3.1.11",
     "@vue/cli-plugin-babel": "4.1.1",
     "@vue/composition-api": "1.0.0-rc.2",
     "core-js": "^3.9.1",
