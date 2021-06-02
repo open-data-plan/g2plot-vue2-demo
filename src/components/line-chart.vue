@@ -2,11 +2,11 @@
   <div>
     <button @click="handleConfigChange">change config</button>
     <button @click="handleDataChange">change data</button>
-    <LineChart v-bind="config" :data="data" />
+    <LineChart v-bind="config" :data="data" :chartRef="chartRef" />
   </div>
 </template>
 <script>
-import { defineComponent } from "vue-demi";
+import { defineComponent, ref } from "vue-demi";
 import { LineChart } from "@opd/g2plot-vue";
 
 export default defineComponent({
@@ -34,6 +34,7 @@ export default defineComponent({
         yField: "value",
         smooth: true,
       },
+      chartRef: ref(),
     };
   },
   methods: {
@@ -49,6 +50,11 @@ export default defineComponent({
         },
       ];
     },
+  },
+  mounted() {
+    this.chartRef.value.on("click", (e) => {
+      console.log(e);
+    });
   },
 });
 </script>
